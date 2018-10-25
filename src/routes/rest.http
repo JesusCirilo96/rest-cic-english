@@ -1,0 +1,7 @@
+POST http://localhost:3000/paciente
+
+Content-Type: application/json;
+
+{
+    "id":"0"
+}
