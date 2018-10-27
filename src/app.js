@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 require('./routes/RouteUsuario')(app);
 require('./routes/RouteDocente')(app);
 require('./routes/RouteNivel')(app);
+require('./routes/RouteGrupoDocenteInt')(app);
 
 //message
 app.listen(app.get('port'), () =>{
