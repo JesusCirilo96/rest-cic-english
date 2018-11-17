@@ -38,6 +38,7 @@ module.exports = function(app){
                 //mokc user
                 const user = {
                     username: email,
+                    id: results[0].DOCENTE_ID,
                     accessLevel: results[0].NIVEL_ACCESO
                 }
                 

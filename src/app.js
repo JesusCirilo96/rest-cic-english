@@ -27,6 +27,10 @@ require('./routes/RouteUsuario')(app);
 require('./routes/RouteDocente')(app);
 require('./routes/RouteNivel')(app);
 require('./routes/RouteGrupoDocenteInt')(app);
+require('./routes/RouteGrupoDocenteExt')(app);
+require('./routes/RouteGrupoAlumnoInt')(app);
+require('./routes/RouteSaveNivelacionInt')(app);
+require('./routes/RouteSaveParcialInt')(app);
 
 //message
 app.listen(app.get('port'), () =>{
