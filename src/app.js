@@ -26,8 +26,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 require('./routes/RouteUsuario')(app);
 require('./routes/RouteDocente')(app);
 require('./routes/RouteNivel')(app);
-require('./routes/RouteGrupoDocenteInt')(app);
+
+//externos
 require('./routes/RouteGrupoDocenteExt')(app);
+require('./routes/RouteGrupoAlumnoExt')(app);
+require('./routes/RouteSaveNivelacionExt')(app);
+require('./routes/RouteSaveParcialExt')(app);
+//internos
+require('./routes/RouteGrupoDocenteInt')(app);
 require('./routes/RouteGrupoAlumnoInt')(app);
 require('./routes/RouteSaveNivelacionInt')(app);
 require('./routes/RouteSaveParcialInt')(app);
