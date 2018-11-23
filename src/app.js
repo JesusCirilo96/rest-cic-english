@@ -24,8 +24,12 @@ app.use(bodyParser.urlencoded({extended: true}));
 //routes
 
 require('./routes/RouteUsuario')(app);
+
+//catalogos
 require('./routes/RouteDocente')(app);
 require('./routes/RouteNivel')(app);
+require('./routes/RouteLicenciatura')(app);
+require('./routes/RouteGrupoInt')(app);
 
 //externos
 require('./routes/RouteGrupoDocenteExt')(app);
@@ -37,6 +41,7 @@ require('./routes/RouteGrupoDocenteInt')(app);
 require('./routes/RouteGrupoAlumnoInt')(app);
 require('./routes/RouteSaveNivelacionInt')(app);
 require('./routes/RouteSaveParcialInt')(app);
+require('./routes/RouteGrupoInt')(app);
 
 //message
 app.listen(app.get('port'), () =>{
