@@ -1,34 +1,36 @@
-const Docente = require('../models/Docente');
+const Alumno = require('../models/Alumno');
 
 module.exports = function(app){
-    
-    app.get('/docente', (req, response)=>{
-        Docente.getDocente((err, data)=>{
+
+    app.get('/alumno', (req, response)=>{
+        Alumno.getAlumno((err, data)=>{
             response.status(200).json(data[0]);
         });
     });
-
-    app.post('/docente', (req, response)=>{
+    
+    app.post('/alumno', (req, response)=>{
         //console.log(req.body.dato);
 
         const data = {
             MODIFICACION: req.body.modificacion,
             ID: req.body.id,
+            MATRICULA: req.body.matricula,
             NOMBRE: req.body.nombre,
             APP: req.body.apellido_pat,
             APM: req.body.apellido_mat,
             ESTADO: req.body.estado,
-            NIVEL_ACCESO: req.body.nivel_acceso,
+            LICENCIATURA: req.body.licenciatura,
+            SEMESTRE: req.body.semestre,
+            GRUPO: req.body.grupo,
             EMAIL: req.body.email,
-            TELEFONO:req.body.telefono,
-            PICTURE: req.body.picture
+            GRUPO_ID: req.body.grupo_int
         };
 
-        Docente.saveDocente(JSON.stringify(data), (err, data)=>{
+        Alumno.saveAlumno(JSON.stringify(data), (err, data)=>{
             if(data){
                 response.json({
                     success: true,
-                    msg: 'Docente Agregado',
+                    msg: 'Alumno Agregado',
                     data: data
                 });
             }else{
