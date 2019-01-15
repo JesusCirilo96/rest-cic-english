@@ -4,7 +4,7 @@ let alumno = {};
 
 alumno.getAlumno = (callback)=>{
     if(connection){
-        connection.query('CALL QUERY_ALUMNO_INT()',
+        connection.query('CALL QUERY_ALUMNO_EXT()',
             (err, rows)=>{
                 if(err){
                     throw err;

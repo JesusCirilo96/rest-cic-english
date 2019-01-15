@@ -1,14 +1,14 @@
-const Alumno = require('../models/Alumno');
+const Alumno = require('../models/AlumnoExterno');
 
 module.exports = function(app){
 
-    app.get('/alumno', (req, response)=>{
+    app.get('/alumnoext', (req, response)=>{
         Alumno.getAlumno((err, data)=>{
             response.status(200).json(data[0]);
         });
     });
     
-    app.post('/alumno', (req, response)=>{
+    app.post('/alumnoext', (req, response)=>{
         //console.log(req.body.dato);
 
         const data = {
@@ -18,6 +18,7 @@ module.exports = function(app){
             NOMBRE: req.body.nombre,
             APP: req.body.apellido_pat,
             APM: req.body.apellido_mat,
+            ESTADO: req.body.estado,
             LICENCIATURA: req.body.licenciatura,
             SEMESTRE: req.body.semestre,
             GRUPO: req.body.grupo,

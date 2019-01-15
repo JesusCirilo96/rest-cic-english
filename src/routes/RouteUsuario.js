@@ -21,9 +21,9 @@ module.exports = function(app){
     });
 
     app.post('/api/login', (req, res)=>{
-        var email = req.body.username;
+        var username = req.body.username;
         var password = req.body.password;
-        connection.query('SELECT * FROM docente WHERE EMAIL = ?',[email], function (error, results, fields) {
+        connection.query('SELECT * FROM docente WHERE DOCENTE_ID = ?',[username], function (error, results, fields) {
         if (error) {
             // console.log("error ocurred",error);
             res.send({
@@ -34,31 +34,25 @@ module.exports = function(app){
             // console.log('The solution is: ', results);
             if(results.length >0){
             if(results[0].CONTRASENA == password){
-
                 //mokc user
-                const user = {
-                    username: email,
-                    id: results[0].DOCENTE_ID,
-                    accessLevel: results[0].NIVEL_ACCESO
-                }
-                
-                jwt.sign({user}, 'secretkey', {expiresIn: '1h'},(err, token) =>{
-                    res.json({
-                        token
-                    });
-                });
+                res.send({
+                    "username": username,
+                    "id": results[0].DOCENTE_ID,
+                    "access":true,
+                    "accessLevel": results[0].NIVEL_ACCESO
+                })
             }
             else{
                 res.send({
                 "code":204,
-                "success":"Email and password does not match"
+                "success":"Username and password does not match"
                     });
             }
             }
             else{
             res.send({
                 "code":204,
-                "success":"Email does not exits"
+                "success":"Username does not exits"
                 });
             }
         }

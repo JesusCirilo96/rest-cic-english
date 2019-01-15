@@ -7,11 +7,23 @@ alumnoGrupoInt.saveAlumnoGrupoInt = (data, callback)=>{
         connection.query("CALL SAVE_ALUMNO_GRUPO_INT('"+data+"')",
             (error, result)=>{
                 if(error){
-                    throw error;
-                }
-                else{
+                    if(error.errno===1062){
+                        callback(null,{
+                            'success':false,
+                            'msg': 'Este Alumno ya esta Inscrito a este curso'
+                        })
+                    }
+                    else{
+                        callback(null,{
+                            'success':false,
+                            'msg': error
+                        })
+                    }
+                   //throw error;
+                }else{
                     callback(null, {
-                        'msg': 'ok'
+                        'success': true,
+                        'msg': 'Alumno Agregado Correctamente'
                     })
                 }
             }

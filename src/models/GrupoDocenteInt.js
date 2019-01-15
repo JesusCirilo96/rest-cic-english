@@ -1,8 +1,8 @@
 connection = require('../connection');
 
 let grupoDocenteInt = {};
+
 grupoDocenteInt.getGrupoDocenteInt = (data, callback)=>{
-    if(connection){
         connection.query("CALL GRUPO_DOCENTE_INT('"+data+"')",
             (err, rows)=>{
                 if(err){
@@ -12,7 +12,5 @@ grupoDocenteInt.getGrupoDocenteInt = (data, callback)=>{
                 }
             }
         )
-    }
 };
-
 module.exports = grupoDocenteInt;

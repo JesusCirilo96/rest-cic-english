@@ -32,12 +32,15 @@ require('./routes/RouteLicenciatura')(app);
 require('./routes/RouteGrupoInt')(app);
 require('./routes/Route_ciclo_escolar')(app);
 require('./routes/Route_periodo_escolar')(app);
+require('./routes/RouteHorario')(app);
 
 //externos
+require('./routes/RouteAlumnoExt')(app);
 require('./routes/RouteGrupoDocenteExt')(app);
 require('./routes/RouteGrupoAlumnoExt')(app);
 require('./routes/RouteSaveNivelacionExt')(app);
 require('./routes/RouteSaveParcialExt')(app);
+
 //internos
 require('./routes/RouteAlumno')(app);
 require('./routes/RouteAlumnoGrupoInt')(app);
