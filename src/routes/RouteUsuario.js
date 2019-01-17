@@ -36,7 +36,7 @@ module.exports = function(app){
             if(results[0].CONTRASENA == password){
                 //mokc user
                 res.send({
-                    "username": username,
+                    "username": results[0].NOMBRE,
                     "id": results[0].DOCENTE_ID,
                     "access":true,
                     "accessLevel": results[0].NIVEL_ACCESO
