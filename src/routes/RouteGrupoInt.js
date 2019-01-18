@@ -15,7 +15,6 @@ module.exports = function(app){
             NIVEL:req.body.nivel,
             DIAS: req.body.dias,
             DOCENTE:req.body.docente,
-            ESTADO:req.body.estado,
             HORARIO: req.body.horario,
             ACCION: req.body.accion,
             ID: req.body.id

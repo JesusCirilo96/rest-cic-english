@@ -4,7 +4,7 @@ connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: 'martinez96',
-    database: 'cic_english'
+    database: 'iesit_english_cic'
 });
 
 module.exports = connection;
