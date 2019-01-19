@@ -10,7 +10,7 @@ alumnoGrupoInt.saveAlumnoGrupoInt = (data, callback)=>{
                     if(error.errno===1062){
                         callback(null,{
                             'success':false,
-                            'msg': 'Este Alumno ya esta Inscrito a este curso'
+                            'msg': 'El Alumno ya esta Inscrito a este curso'
                         })
                     }
                     else{

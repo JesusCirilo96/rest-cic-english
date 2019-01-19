@@ -64,14 +64,13 @@ module.exports = function(app){
                 }
             });
         }
-        if (modificacion === 'D'){
+        if (modificacion === 'D' || modificacion === 'S'){
             const data = {
                 MODIFICACION: req.body.modificacion,
                 ID: req.body.id,
                 NOMBRE: req.body.nombre,
                 APP: req.body.apellido_pat,
                 APM: req.body.apellido_mat,
-                ESTADO: req.body.estado,
                 NIVEL_ACCESO: req.body.nivel_acceso,
                 EMAIL: req.body.email,
                 TELEFONO:req.body.telefono

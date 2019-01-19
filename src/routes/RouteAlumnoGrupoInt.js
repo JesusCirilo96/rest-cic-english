@@ -7,6 +7,7 @@ module.exports = function(app){
         const data = {
             MATRICULA: req.body.matricula,
             GRUPO_ID: req.body.grupo_id,
+            TIPO_CURSO: req.body.tipo_curso
         };
 
         alumnoGrupoInt.saveAlumnoGrupoInt(JSON.stringify(data), (err, data)=>{
